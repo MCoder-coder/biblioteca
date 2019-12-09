@@ -12,8 +12,9 @@
                     <h3 class="box-title">Crear Menu</h3>
                 </div>
                 <!-- /.box-header -->
-                <div class="box-body table-responsive no-padding">
-                    <form  action="{{ route('guardar_menu') }}" id="form-general" class="form-horizontal" method="POST">
+                
+                    <form  action="{{route('guardar_menu') }}" id="form-general" class="form-horizontal" method="POST">
+                         @csrf
                         <div class="box-body">
 
                           @include('admin.menu.form')
