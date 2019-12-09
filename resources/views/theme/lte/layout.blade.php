@@ -19,7 +19,10 @@
            folder instead of downloading all of them to reduce the load. -->
     <link rel="stylesheet" href="{{asset("assets/$theme/dist/css/skins/_all-skins.min.css")}}">
 
+    <link rel="stylesheet" href="{{asset("assets/css/custom.css")}}">
+    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+    
 
     @yield("styles")
 
