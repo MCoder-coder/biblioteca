@@ -3,7 +3,7 @@
 
     <div class="col-lg-8">
 
-        <input type="text" class="form-control" id="nombre"  name="nombre" value="" required/>
+        <input type="text" class="form-control" id="nombre"  name="nombre" value="{{ old('nombre') }}" required/>
     </div>
 </div>
 <div class="form-group">
@@ -11,7 +11,7 @@
 
     <div class="col-lg-8">
 
-        <input type="text" class="form-control" id="url"  name="url" value="" required/>
+        <input type="text" class="form-control" id="url"  name="url" value="{{ old('url') }}" required/>
     </div>
 </div>
 <div class="form-group">
@@ -19,7 +19,7 @@
 
     <div class="col-lg-8">
 
-        <input type="text" class="form-control" id="icono"  name="icono" value="" />
+        <input type="text" class="form-control" id="icono"  name="icono" value="{{ old('icono') }}" />
     </div>
 </div>
 
