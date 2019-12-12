@@ -21,6 +21,9 @@
 
         <input type="text" class="form-control" id="icono"  name="icono" value="{{ old('icono') }}" />
     </div>
+    <div class="col-lg-1">
+        <span id="mostrar-icono" class="fa fa-fw {{ old("icono") }}"></span>
+    </div>
 </div>
 
 

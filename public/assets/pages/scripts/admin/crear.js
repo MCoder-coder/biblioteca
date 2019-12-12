@@ -1,4 +1,4 @@
-$(document).ready(function() {
+$(document).ready(function () {
     Biblioteca.validacionGeneral('form-general');
 
 });
