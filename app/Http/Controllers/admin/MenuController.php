@@ -41,6 +41,7 @@ class MenuController extends Controller
     {
         //
         Menu::create($request->all());
+        return redirect('admin/menu/crear')->with('mensaje', 'Menu Actualizado con exito');//variable session
     }
 
     /**

@@ -3,7 +3,7 @@
 
     <div class="col-lg-8">
 
-        <input type="text" class="form-control" id="nombre"  name="nombre" value="{{ old('nombre') }}" required/>
+        <input type="text" class="form-control" id="nombre"  name="nombre" value="{{ old('nombre') }}" />
     </div>
 </div>
 <div class="form-group">
