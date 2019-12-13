@@ -1,34 +1,43 @@
 @extends("theme.$theme.layout")
-@section('titulo')
-    permisos
-@stop
+@section("titulo")
+Menú
+@endsection
+
+@section("styles")
+<link href="{{asset("assets/js/jquery-nestable/jquery.nestable.css")}}" rel="stylesheet" type="text/css" />
+@endsection
+
+@section("scriptsPlugins")
+<script src="{{asset("assets/js/jquery-nestable/jquery.nestable.js")}}" type="text/javascript"></script>
+@endsection
+
+@section("scripts")
+<script src="{{asset("assets/pages/scripts/admin/menu/index.js")}}" type="text/javascript"></script>
+@endsection
 
 @section('contenido')
-    <div class="row">
-        <div class="col-lg-12">
-
-            <div class="box box-primary">
-                <div class="box-header with-border">
-                    <h3 class="box-title">Permisos</h3>
-                </div>
-                <!-- /.box-header -->
-                <div class="box-body table-responsive no-padding">
-
-                </div>
-                <!-- /.box-body -->
-                <div class="box-footer clearfix">
-                    <ul class="pagination pagination-sm no-margin pull-right">
-                        <li><a href="#">«</a></li>
-                        <li><a href="#">1</a></li>
-                        <li><a href="#">2</a></li>
-                        <li><a href="#">3</a></li>
-                        <li><a href="#">»</a></li>
-                    </ul>
+<div class="row">
+    <div class="col-lg-12">
+        @include('includes.mensaje')
+        <div class="box box-success">
+            <div class="box-header with-border">
+                <h3 class="box-title">Menús</h3>
+                <a href="{{route('crear_menu')}}" class="btn btn-success btn-sm pull-right">Crear menú</a>
+            </div>
+            <div class="box-body">
+                @csrf
+                <div class="dd" id="nestable">
+                    <ol class="dd-list">
+                        @foreach ($menus as $key => $item)
+                            @if ($item["menu_id"] != 0)
+                                @break
+                            @endif
+                            @include("admin.menu.menu-item",["item" => $item])
+                        @endforeach
+                    </ol>
                 </div>
             </div>
         </div>
-
-
     </div>
-
-@endsection()
+</div>
+@endsection
