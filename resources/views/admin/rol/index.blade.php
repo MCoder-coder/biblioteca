@@ -34,7 +34,7 @@ Roles
                             <td>{{$data->nombre}}</td>
                             <td>
                                 <a href="{{route('editar_rol', ['id' => $data->id])}}" class="btn-accion-tabla tooltipsC" title="Editar este registro">
-                                  <i class="fa fa-fw fa-pencil"></i>
+                                    <i class="fa fa-fw fa-pencil"></i>
                                 </a>
                                 <form action="{{route('eliminar_rol', ['id' => $data->id])}}" class="d-inline form-eliminar" method="POST">
                                     @csrf @method("delete")

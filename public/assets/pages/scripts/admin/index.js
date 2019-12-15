@@ -1,5 +1,5 @@
-$(document).ready(function () {
-    $("#tabla-data").on('submit', '.form-eliminar', function () {
+$(document).ready(function() {
+    $("#tabla-data").on('submit', '.form-eliminar', function() {
         event.preventDefault();
         const form = $(this);
         swal({
@@ -22,7 +22,7 @@ $(document).ready(function () {
             url: form.attr('action'),
             type: 'POST',
             data: form.serialize(),
-            success: function (respuesta) {
+            success: function(respuesta) {
                 if (respuesta.mensaje == "ok") {
                     form.parents('tr').remove();
                     Biblioteca.notificaciones('El registro fue eliminado correctamente', 'Biblioteca', 'success');
@@ -30,7 +30,7 @@ $(document).ready(function () {
                     Biblioteca.notificaciones('El registro no pudo ser eliminado, hay recursos usandolo', 'Biblioteca', 'error');
                 }
             },
-            error: function () {
+            error: function() {
 
             }
         });

@@ -3,5 +3,5 @@
 
     <div class="col-lg-8">
 
-        <input type="text" class="form-control" id="nombre"  name="nombre" value="{{ old('nombre') }}" />
+        <input type="text" class="form-control" id="nombre"  name="nombre" value="{{ old('nombre', $data->nombre ??  '') }}" required />
     </div>

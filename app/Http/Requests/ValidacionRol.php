@@ -1,9 +1,6 @@
 <?php
-
 namespace App\Http\Requests;
-
 use Illuminate\Foundation\Http\FormRequest;
-
 class ValidacionRol extends FormRequest
 {
     /**
@@ -15,7 +12,6 @@ class ValidacionRol extends FormRequest
     {
         return true;
     }
-
     /**
      * Get the validation rules that apply to the request.
      *
@@ -24,10 +20,7 @@ class ValidacionRol extends FormRequest
     public function rules()
     {
         return [
-             //this->route id verifica que otro campo no tenga el mismo id que estoy editando
-            'nombre' => 'required|max:50|unique:menu,nombre,' . $this->route('id'),
-           
-
+            'nombre' => 'required|max:50|unique:rol,nombre,' . $this->route('id'),
         ];
     }
 }

@@ -22,7 +22,8 @@
                 </div>
             </div>
             <form action="{{route('actualizar_rol', ['id' => $data->id])}}" id="form-general" class="form-horizontal" method="POST" autocomplete="off">
-                @csrf @method("put")
+                   {{-- put para actualiza y guardar los cambios con @method   --}}
+                   @csrf @method("put")
                 <div class="box-body">
                     @include('admin.rol.form')
                 </div>
