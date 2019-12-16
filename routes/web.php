@@ -12,12 +12,17 @@
 */
 
 
-Route::get('/', 'InicioController@index');
+Route::get('/', 'InicioController@index')->name('inicio');
+Route::get('seguridad/login', 'Seguridad\LoginController@index')->name('login');
+Route::post('seguridad/login', 'Seguridad\LoginController@index')->name('login_post');
+Route::get('seguridad/logout', 'Seguridad\LoginController@logout')->name('logout');
+Route::post('ajax-sesion', 'AjaxController@setSession')->name('ajax')->middleware('auth');
 
 
+Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'middleware' => ['auth', 'superadmin']], function () {
 
-Route::group(['prefix' => 'admin' , 'namespace' => 'Admin'], function () {
-  
+    Route::get('', 'AdminController@index');
+
     Route::get('permiso', 'PermisoController@index')->name('permiso');
     Route::get('permiso/crear','PermisoController@crear')->name('crear_permiso');
 
