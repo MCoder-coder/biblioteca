@@ -10,6 +10,7 @@ class Menu extends Model
     public function roles()
     {
         return $this->belongsToMany(Rol::class, 'menu_rol');
+                    //belongsToMany mucho a muchos relacion de tabla
     }
     public function getHijos($padres, $line)
     {
